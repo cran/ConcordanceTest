@@ -2,31 +2,35 @@
 % Please edit documentation in R/functions.R
 \name{CT_Critical_Values}
 \alias{CT_Critical_Values}
-\title{Critical Values of Concordance and Kruskal Wallis Tests. Exact Method}
+\title{Critical Values of the Concordance and Kruskal-Wallis Tests}
 \usage{
-CT_Critical_Values(Sample_Sizes, H = 0)
+CT_Critical_Values(Sample_Sizes, Num_Sim = 10000, H = 0)
 }
 \arguments{
 \item{Sample_Sizes}{Numeric vector (\code{n1},...,\code{nk}) containing the number of repetitions of each element, i.e., the size of each sample in the experiment.}
 
-\item{H}{0 by default. If set to 1, the critical values of the Kruskal-Wallis Test are also calculated and returned.}
+\item{Num_Sim}{Number of simulations in order to obtain the probability distribution of the statistics. The default is 10000. If set to 0, the critical values and the p-values are obtained exactly. Otherwise they are obtained by simulation.}
+
+\item{H}{0 by default. If set to 1, the critical values and the p-values of the Kruskal-Wallis test are also calculated and returned.}
 }
 \value{
 The function returns a list with the following elements:
 \enumerate{
- \item{ \code{C_results}: Concordance Coefficient results. Critical values and exact p-values for a desired significance levels of 0.1, .05 and .01. }
- \item{ \code{H_results}: Kruskal Wallis results. Critical values and exact p-values for a desired significance levels of 0.1, .05 and .01 (only if H = 1). }
+ \item{ \code{C_results}: Concordance coefficient results. Critical values and p-values for a desired significance levels of 0.1, .05 and .01. }
+ \item{ \code{H_results}: Kruskal-Wallis results. Critical values and p-values for a desired significance levels of 0.1, .05 and .01 (only if H = 1). }
 }
 }
 \description{
-This function computes the critical values of the Concordance and Kruskal Wallis Tests. Exact p-value of desired significance levels of .10, .05 and .01.
+This function computes the critical values and the p-values for a desired significance levels of .10, .05 and .01. of the Concordance and Kruskal-Wallis tests. Critical values and p-values can be obtained exactly or by simulation (default option).
 }
 \section{Warning}{
 
-The number of permutations increases rapidly with lenght (Sets). The computational time increases exponetianly with the number of elements and with the number of sets.
+The computational time in exact calculations increases exponentially with the number of elements and with the number of sets.
 }
 
 \examples{
-Sample_Sizes <- c(4,4,2)
-CT_Critical_Values(Sample_Sizes, H = 1)
+Sample_Sizes <- c(3,3,3)
+CT_Critical_Values(Sample_Sizes, Num_Sim = 0, H = 1)
+
+CT_Critical_Values(Sample_Sizes, Num_Sim = 1000, H = 1)
 }

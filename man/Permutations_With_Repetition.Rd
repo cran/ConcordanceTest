@@ -13,21 +13,14 @@ Permutations_With_Repetition(Sample_Sizes)
 Returns a matrix where each row contains a permutation.
 }
 \description{
-This function enumerates the possible combinations of \code{n} elements where the first element is repeated \code{n1} times, the sencond element is repeated \code{n2} times, the third \code{n3} times, ...
+This function enumerates the possible combinations of \code{n} elements where the first element is repeated \code{n1} times, the second element is repeated \code{n2} times, the third \code{n3} times, ...
 }
 \section{Warning}{
 
-The number of permutations increases rapidly with lenght (Sets). The computational time increases exponetianly with the number of elements and with the number of sets.
+The number of permutations and the computational time increase exponentially with the number of elements and with the number of sets.
 }
 
 \examples{
 Sample_Sizes <- c(2,2,2)
 Permutations_With_Repetition(Sample_Sizes)
-
-Sample_Sizes <- c(2,3)
-Permutations_With_Repetition(Sample_Sizes)
-
-Permutations_With_Repetition(c(3,2,3))
-
-Permutations_With_Repetition(c(10,5))
 }

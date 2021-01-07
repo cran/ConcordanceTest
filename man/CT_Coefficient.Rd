@@ -2,14 +2,14 @@
 % Please edit documentation in R/functions.R
 \name{CT_Coefficient}
 \alias{CT_Coefficient}
-\title{Concordance Coefficient and Kruskal Wallis Statistic}
+\title{Concordance Coefficient and Kruskal-Wallis Statistic}
 \usage{
 CT_Coefficient(Sample_List, H = 0)
 }
 \arguments{
 \item{Sample_List}{List of numeric data vectors with the elements of each sample.}
 
-\item{H}{0 by default. If set to 1, the Kruskal Wallis Statistic is also calculated and returned.}
+\item{H}{0 by default. If set to 1, the Kruskal-Wallis statistic is also calculated and returned.}
 }
 \value{
 The function returns a list with the following elements:
@@ -18,11 +18,11 @@ The function returns a list with the following elements:
  \item{ \code{order_elements}: Numeric vector containing the elements order. }
 \item{ \code{disorder}: Disorder of the permutation given by \code{order_elements}.}
  \item{ \code{Concordance_Coefficient}: 1-relative disorder of permutation given by \code{order_elements}. }
- \item{ \code{H_Statistic}: Kruskal Wallis Statistic (only if H = 1). }
+ \item{ \code{H_Statistic}: Kruskal-Wallis statistic (only if H = 1). }
 }
 }
 \description{
-This function computes the Concordance Coefficient and Kruskal Wallis Statistic.
+This function computes the Concordance coefficient and the Kruskal-Wallis statistic.
 }
 \examples{
 ## Example

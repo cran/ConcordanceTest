@@ -2,11 +2,9 @@
 
 export(CT_Coefficient)
 export(CT_Critical_Values)
-export(CT_Critical_Values_Sim)
 export(CT_Density_Plot)
 export(CT_Distribution)
-export(CT_Distribution_Sim)
-export(CT_Hyphotesis_Test)
+export(CT_Hypothesis_Test)
 export(CT_Probability_Plot)
 export(LOP)
 export(Permutations_With_Repetition)

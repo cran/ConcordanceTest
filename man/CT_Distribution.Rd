@@ -2,34 +2,37 @@
 % Please edit documentation in R/functions.R
 \name{CT_Distribution}
 \alias{CT_Distribution}
-\title{Probability Distribution of Concordance Coefficient and Kruskal Wallis Statistic}
+\title{Probability Distribution of the Concordance Coefficient and the Kruskal-Wallis Statistic}
 \usage{
-CT_Distribution(Sample_Sizes, H = 0)
+CT_Distribution(Sample_Sizes, Num_Sim = 10000, H = 0)
 }
 \arguments{
 \item{Sample_Sizes}{Numeric vector (\code{n1},...,\code{nk}) containing the number of repetitions of each element, i.e., the size of each sample in the experiment.}
 
-\item{H}{0 by default. If set to 1, the probability distribution table of Kruskal-Wallis Statistic is also calculated and returned.}
+\item{Num_Sim}{Number of simulations in order to obtain the probability distribution of the statistics. The default is 10000. If set to 0, the probability distribution tables are obtained exactly. Otherwise they are obtained by simulation.}
+
+\item{H}{0 by default. If set to 1, the probability distribution table of the Kruskal-Wallis statistic is also calculated and returned.}
 }
 \value{
 The function returns a list with the following elements:
 \enumerate{
- \item{ \code{C_freq}: Matrix with the probability distribution of Concordance Coefficient. Each row in the matrix contains the disorder, the value of the statistic, the frequency and its probability.}
- \item{ \code{H_freq}: Matrix with the probability distribution of Kruskal Wallis Statistic. Each row in the matrix contains the value of the statistic, the frequency and its probability (only if H = 1).}
+ \item{ \code{C_freq}: Matrix with the probability distribution of the Concordance coefficient. Each row in the matrix contains the disorder, the value of the coefficient, the frequency and its probability.}
+ \item{ \code{H_freq}: Matrix with the probability distribution of the Kruskal-Wallis statistic. Each row in the matrix contains the value of the statistic, the frequency and its probability (only if H = 1).}
 }
 }
 \description{
-This function computes the probability distribution tables of Concordance Coefficient and Kruskal Wallis Statistic.
+This function computes the probability distribution tables of the Concordance coefficient and Kruskal-Wallis statistic. Probability distribution tables can be obtained exactly or by simulation (default option).
 }
 \section{Warning}{
 
-The number of permutations increases rapidly with lenght (Sets). The computational time increases exponetianly with the number of elements and with the number of sets.
+The computational time in exact calculations increases exponentially with the number of elements and with the number of sets.
 }
 
 \examples{
 Sample_Sizes <- c(5,4)
-CT_Distribution(Sample_Sizes)
-CT_Distribution(Sample_Sizes, H = 1)
+CT_Distribution(Sample_Sizes, Num_Sim = 0)
+CT_Distribution(Sample_Sizes, Num_Sim = 0, H = 1)
 
-CT_Distribution(c(3,3,3), H = 1)
+CT_Distribution(Sample_Sizes, Num_Sim = 1000)
+CT_Distribution(Sample_Sizes, Num_Sim = 1000, H = 1)
 }

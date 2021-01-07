@@ -2,28 +2,21 @@
 % Please edit documentation in R/functions.R
 \name{CT_Density_Plot}
 \alias{CT_Density_Plot}
-\title{Density Plot from the Concordance Coefficient and Kruskal Wallis Normalized Statistics}
+\title{Density Plot from the Concordance Coefficient and the Kruskal-Wallis Normalized Statistic}
 \usage{
 CT_Density_Plot(C_freq = NULL, H_freq = NULL)
 }
 \arguments{
-\item{C_freq}{Frecuency and probability distribution of Concordance Coefficient obtained from the functions: \code{\link{CT_Distribution}}, \code{\link{CT_Distribution_Sim}}.}
+\item{C_freq}{Probability distribution of the Concordance coefficient obtained with the function \code{\link{CT_Distribution}}.}
 
-\item{H_freq}{Frecuency and probability distribution of Kruskal Wallis statistic obtained from the functions: \code{\link{CT_Distribution}}, \code{\link{CT_Distribution_Sim}}.}
+\item{H_freq}{Probability distribution of the Kruskal-Wallis statistic obtained with the function \code{\link{CT_Distribution}}.}
 }
 \description{
-This function performs the graphical visualization of the density distribution of Concordance Coefficient and Kruskal Wallis Statistic.
+This function performs the graphical visualization of the density distribution of the Concordance coefficient and the Kruskal-Wallis statistic.
 }
 \examples{
-Sample_Sizes <- c(5,4)
-Distributions <-  CT_Distribution(Sample_Sizes, H = 1)
-C_freq <- Distributions$C_freq
-H_freq <- Distributions$H_freq
-CT_Density_Plot(C_freq, H_freq)
-
-
 Sample_Sizes <- c(5,5,5)
-Distributions <-  CT_Distribution_Sim(Sample_Sizes, Num_Sim = 1000, H = 1)
+Distributions <-  CT_Distribution(Sample_Sizes, Num_Sim = 1000, H = 1)
 C_freq <- Distributions$C_freq
 H_freq <- Distributions$H_freq
 CT_Density_Plot(C_freq, H_freq)
