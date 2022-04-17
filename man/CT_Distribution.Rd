@@ -4,7 +4,7 @@
 \alias{CT_Distribution}
 \title{Probability Distribution of the Concordance Coefficient and the Kruskal-Wallis Statistic}
 \usage{
-CT_Distribution(Sample_Sizes, Num_Sim = 10000, H = 0)
+CT_Distribution(Sample_Sizes, Num_Sim = 10000, H = 0, verbose = TRUE)
 }
 \arguments{
 \item{Sample_Sizes}{Numeric vector (\code{n1},...,\code{nk}) containing the number of repetitions of each element, i.e., the size of each sample in the experiment.}
@@ -12,6 +12,8 @@ CT_Distribution(Sample_Sizes, Num_Sim = 10000, H = 0)
 \item{Num_Sim}{Number of simulations in order to obtain the probability distribution of the statistics. The default is 10000. If set to 0, the probability distribution tables are obtained exactly. Otherwise they are obtained by simulation.}
 
 \item{H}{0 by default. If set to 1, the probability distribution table of the Kruskal-Wallis statistic is also calculated and returned.}
+
+\item{verbose}{A logical indicating if some "progress report" of the simulations should be given. The default is TRUE.}
 }
 \value{
 The function returns a list with the following elements:

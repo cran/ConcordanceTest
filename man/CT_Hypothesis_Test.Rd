@@ -4,7 +4,7 @@
 \alias{CT_Hypothesis_Test}
 \title{Hypothesis Test for Testing whether Samples Originate from the Same Distribution}
 \usage{
-CT_Hypothesis_Test(Sample_List, Num_Sim = 10000, H = 0)
+CT_Hypothesis_Test(Sample_List, Num_Sim = 10000, H = 0, verbose = TRUE)
 }
 \arguments{
 \item{Sample_List}{List of numeric data vectors with the elements of each sample.}
@@ -12,6 +12,8 @@ CT_Hypothesis_Test(Sample_List, Num_Sim = 10000, H = 0)
 \item{Num_Sim}{The number of used simulations. The default is 10000.}
 
 \item{H}{0 by default. If set to 1, the Kruskal-Wallis test is also performed and returned.}
+
+\item{verbose}{A logical indicating if some "progress report" of the simulations should be given. The default is TRUE.}
 }
 \value{
 The function returns a list with the following elements:
@@ -49,4 +51,7 @@ B <- c(29,31,49,52,54)
 C <- c(24,26,44)
 Sample_List <- list(A, B, C)
 CT_Hypothesis_Test(Sample_List, Num_Sim = 1000, H = 1)
+}
+\references{
+Myles Hollander and Douglas A. Wolfe (1973), Nonparametric Statistical Methods. New York: John Wiley & Sons. Pages 115-120.
 }

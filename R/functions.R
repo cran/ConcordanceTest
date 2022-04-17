@@ -200,6 +200,7 @@ LOP <- function(mat_LOP){
 #' @param Sample_Sizes Numeric vector (\code{n1},...,\code{nk}) containing the number of repetitions of each element, i.e., the size of each sample in the experiment.
 #' @param Num_Sim Number of simulations in order to obtain the probability distribution of the statistics. The default is 10000. If set to 0, the probability distribution tables are obtained exactly. Otherwise they are obtained by simulation.
 #' @param H 0 by default. If set to 1, the probability distribution table of the Kruskal-Wallis statistic is also calculated and returned.
+#' @param verbose A logical indicating if some "progress report" of the simulations should be given. The default is TRUE. 
 #' @return The function returns a list with the following elements:
 #' \enumerate{
 #'  \item{ \code{C_freq}: Matrix with the probability distribution of the Concordance coefficient. Each row in the matrix contains the disorder, the value of the coefficient, the frequency and its probability.}
@@ -215,7 +216,7 @@ LOP <- function(mat_LOP){
 #' CT_Distribution(Sample_Sizes, Num_Sim = 1000)
 #' CT_Distribution(Sample_Sizes, Num_Sim = 1000, H = 1)
 #' @export
-CT_Distribution <- function(Sample_Sizes, Num_Sim = 10000, H = 0){
+CT_Distribution <- function(Sample_Sizes, Num_Sim = 10000, H = 0, verbose = TRUE){
 
   if(!is.numeric(Sample_Sizes))
     stop("Some elements of 'Sample_Sizes' are not numeric")
@@ -353,15 +354,17 @@ CT_Distribution <- function(Sample_Sizes, Num_Sim = 10000, H = 0){
       opt[n] <- N_T-opt[n]
       rho[n] <- 1 - opt[n]/(N_T-N_min)
 
-      if(n == 1) message("Simulations (x1000):")
-      if(n %% 1000 == 0) message(c(n/1000,"  "), appendLF = FALSE)
+      if (verbose) {
+        if(n == 1) message("Simulations (x1000):")
+        if(n %% 1000 == 0) message(c(n/1000,"  "), appendLF = FALSE)
+      }
 
       if (H == 1) {
         KW[n] <- sum(tapply(1:N, x, "sum")^2 / tapply(1:N, x, "length"))
         KW[n] <- 12*KW[n]/(N*(N+1)) -3*(N+1)
       }
     }
-    message("")
+    if (verbose) message("")
   }
 
   if (!any(sapply(rho, is.na))) {
@@ -672,13 +675,15 @@ CT_Density_Plot <- function(C_freq = NULL, H_freq = NULL){
 #' @param Sample_List List of numeric data vectors with the elements of each sample.
 #' @param Num_Sim The number of used simulations. The default is 10000.
 #' @param H 0 by default. If set to 1, the Kruskal-Wallis test is also performed and returned.
+#' @param verbose A logical indicating if some "progress report" of the simulations should be given. The default is TRUE. 
 #' @return The function returns a list with the following elements:
 #' \enumerate{
 #' \item{ \code{results}: Table with the statistics and the signification levels.}
 #'  \item{ \code{C_p-value}: Concordance test signification level. }
 #'  \item{ \code{H_p-value}: Kruskal-Wallis test signification level (only if H = 1). }
 #' }
-#'@examples
+#' @references Myles Hollander and Douglas A. Wolfe (1973), Nonparametric Statistical Methods. New York: John Wiley & Sons. Pages 115-120.
+#' @examples
 #' ## Hollander & Wolfe (1973), 116.
 #' ## Mucociliary efficiency from the rate of removal of dust in normal
 #' ##  subjects, subjects with obstructive airway disease, and subjects
@@ -704,7 +709,7 @@ CT_Density_Plot <- function(C_freq = NULL, H_freq = NULL){
 #' Sample_List <- list(A, B, C)
 #' CT_Hypothesis_Test(Sample_List, Num_Sim = 1000, H = 1)
 #' @export
-CT_Hypothesis_Test <- function(Sample_List, Num_Sim = 10000, H = 0){
+CT_Hypothesis_Test <- function(Sample_List, Num_Sim = 10000, H = 0, verbose = TRUE){
 
   if(is.list(Sample_List)) {
 
@@ -807,15 +812,17 @@ CT_Hypothesis_Test <- function(Sample_List, Num_Sim = 10000, H = 0){
 
       opt[n] <- LOP(pref)$obj_val
 
-      if(n==1) message("Simulations (x1000):")
-      if(n%%1000==0) message(c(n/1000,"  "), appendLF = FALSE)
+      if (verbose) {
+        if(n==1) message("Simulations (x1000):")
+        if(n%%1000==0) message(c(n/1000,"  "), appendLF = FALSE)
+      }
 
       if (H == 1) {
          KW[n] <- sum(tapply(1:N, x, "sum")^2 / tapply(1:N, x, "length"))
          KW[n] <- 12*KW[n]/(N*(N+1)) -3*(N+1)
       }
     }
-    message("")
+    if (verbose) message("")
 
     x <- order_elements
     opt_SUCESO <- 0

@@ -1,12 +1,12 @@
-a71950efbe436f61ab1a1ae1c83f6239 *DESCRIPTION
+f0dd91779d1363a51116541c950ee903 *DESCRIPTION
 930a37edcff30c10a710bb1d78c97256 *NAMESPACE
-0849e2a699c8936344ae4e247b6dbd2f *NEWS.md
-63a5a2b18a61ba582955f3527e9fc44e *R/functions.R
+3c5de660a709485ca1860197055602e7 *NEWS.md
+f3bd5b857f93253d2c70a48bf395510c *R/functions.R
 9a8fcd49f4aae0a1e0011b2b9dcc5129 *man/CT_Coefficient.Rd
 f3800f288c82821c053eb0b31f2e78e9 *man/CT_Critical_Values.Rd
 ee2b36c24af87f08083561438f1c02b9 *man/CT_Density_Plot.Rd
-573a3ad52b885f188ce3e1940cad77f0 *man/CT_Distribution.Rd
-e4b287e7117dfefa2a394a947f06e53e *man/CT_Hypothesis_Test.Rd
+62a79c9630f62c1754bc8d3c6e4f1a43 *man/CT_Distribution.Rd
+998f0c18c8621c349feb6bcf862d7cd5 *man/CT_Hypothesis_Test.Rd
 3241d0fa3bc43a19721f8383cc676d67 *man/CT_Probability_Plot.Rd
 3bc7e3ae1e1f5079d10594bbedc92ca5 *man/LOP.Rd
 82889e5b392beda2b1bfc197c29c636a *man/Permutations_With_Repetition.Rd
