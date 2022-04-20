@@ -1,8 +1,16 @@
+## ConcordanceTest 1.0.2
+
+### Changes
+
+- Functions 'CT_Critical_Values' includes a new 'verbose' logical parameter (TRUE by default), indicating if some progress report of the simulations should be given.
+
+---
+
 ## ConcordanceTest 1.0.1
 
 ### Changes
 
-- Functions 'CT_Hypothesis_Test' and 'CT_Distribution' include a new 'verbose' logical parameter (TRUE by default), indicating if some progress report of the simulations should be given.
+- Functions 'CT_Distribution' and 'CT_Hypothesis_Test' include a new 'verbose' logical parameter (TRUE by default), indicating if some progress report of the simulations should be given.
 
 ---
 

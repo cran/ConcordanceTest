@@ -418,6 +418,7 @@ CT_Distribution <- function(Sample_Sizes, Num_Sim = 10000, H = 0, verbose = TRUE
 #' @param Sample_Sizes Numeric vector (\code{n1},...,\code{nk}) containing the number of repetitions of each element, i.e., the size of each sample in the experiment.
 #' @param Num_Sim Number of simulations in order to obtain the probability distribution of the statistics. The default is 10000. If set to 0, the critical values and the p-values are obtained exactly. Otherwise they are obtained by simulation.
 #' @param H 0 by default. If set to 1, the critical values and the p-values of the Kruskal-Wallis test are also calculated and returned.
+#' @param verbose A logical indicating if some "progress report" of the simulations should be given. The default is TRUE. 
 #' @return The function returns a list with the following elements:
 #' \enumerate{
 #'  \item{ \code{C_results}: Concordance coefficient results. Critical values and p-values for a desired significance levels of 0.1, .05 and .01. }
@@ -431,7 +432,7 @@ CT_Distribution <- function(Sample_Sizes, Num_Sim = 10000, H = 0, verbose = TRUE
 #'
 #' CT_Critical_Values(Sample_Sizes, Num_Sim = 1000, H = 1)
 #' @export
-CT_Critical_Values <- function(Sample_Sizes, Num_Sim = 10000, H = 0){
+CT_Critical_Values <- function(Sample_Sizes, Num_Sim = 10000, H = 0, verbose = TRUE){
 
   if(!is.numeric(Sample_Sizes))
     stop("Some elements of 'Sample_Sizes' are not numeric")
@@ -450,7 +451,7 @@ CT_Critical_Values <- function(Sample_Sizes, Num_Sim = 10000, H = 0){
     Num_Sim <- 10000
   }
 
-  distributions <- CT_Distribution(Sample_Sizes, Num_Sim, H)
+  distributions <- CT_Distribution(Sample_Sizes, Num_Sim, H, verbose)
 
   C_freq <- distributions$C_freq
 

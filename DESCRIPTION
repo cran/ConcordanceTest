@@ -1,7 +1,7 @@
 Package: ConcordanceTest
 Title: An Alternative to the Kruskal-Wallis Based on the Kendall Tau
         Distance
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: c(
 	person(given = "Javier",
            family = "Alcaraz",
@@ -22,10 +22,10 @@ License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2022-04-17 12:10:16 UTC; Laura
+Packaged: 2022-04-17 16:08:35 UTC; Laura
 Author: Javier Alcaraz [aut],
   Laura Anton-Sanchez [aut, cre],
   Juan Francisco Monge [aut]
 Maintainer: Laura Anton-Sanchez <l.anton@umh.es>
 Repository: CRAN
-Date/Publication: 2022-04-17 12:32:29 UTC
+Date/Publication: 2022-04-20 17:02:29 UTC

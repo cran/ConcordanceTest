@@ -1,9 +1,9 @@
-f0dd91779d1363a51116541c950ee903 *DESCRIPTION
+37f71a124edaf3b3390d140f76417f59 *DESCRIPTION
 930a37edcff30c10a710bb1d78c97256 *NAMESPACE
-3c5de660a709485ca1860197055602e7 *NEWS.md
-f3bd5b857f93253d2c70a48bf395510c *R/functions.R
+e8e3f098d0918e32ea5d5934b9c035a7 *NEWS.md
+daca6c5350152c338e5a7b82c20c10fc *R/functions.R
 9a8fcd49f4aae0a1e0011b2b9dcc5129 *man/CT_Coefficient.Rd
-f3800f288c82821c053eb0b31f2e78e9 *man/CT_Critical_Values.Rd
+ec587912bb227f86bb3cfbe95df0e754 *man/CT_Critical_Values.Rd
 ee2b36c24af87f08083561438f1c02b9 *man/CT_Density_Plot.Rd
 62a79c9630f62c1754bc8d3c6e4f1a43 *man/CT_Distribution.Rd
 998f0c18c8621c349feb6bcf862d7cd5 *man/CT_Hypothesis_Test.Rd
