@@ -1,3 +1,10 @@
+## ConcordanceTest 1.0.3
+
+### Changes
+
+- The reference to The R Journal article with details of the proposed method has been updated.
+
+---
 ## ConcordanceTest 1.0.2
 
 ### Changes

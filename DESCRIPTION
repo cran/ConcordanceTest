@@ -1,7 +1,7 @@
 Package: ConcordanceTest
 Title: An Alternative to the Kruskal-Wallis Based on the Kendall Tau
         Distance
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: c(
 	person(given = "Javier",
            family = "Alcaraz",
@@ -15,17 +15,17 @@ Authors@R: c(
            family = "Monge",
            role = c("aut"),
            email = "monge@umh.es"))
-Description: The Concordance Test is a non-parametric method for testing whether two o more samples originate from the same distribution. It extends the Kendall Tau correlation coefficient when there are only two groups. For details, see Monge (2020) <arXiv:1912.12880v2>.
+Description: The Concordance Test is a non-parametric method for testing whether two o more samples originate from the same distribution. It extends the Kendall Tau correlation coefficient when there are only two groups. For details, see Alcaraz J., Anton-Sanchez L., Monge J.F. (2022) The Concordance Test, an Alternative to Kruskal-Wallis Based on the Kendall-tau Distance: An R Package. The R Journal 14, 26–53 <doi:10.32614/RJ-2022-039>.
 Depends: R (>= 3.3.2)
 Imports: Rglpk, stats, graphics
 License: GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.1.2
+RoxygenNote: 7.3.0
 NeedsCompilation: no
-Packaged: 2022-04-17 16:08:35 UTC; Laura
 Author: Javier Alcaraz [aut],
   Laura Anton-Sanchez [aut, cre],
   Juan Francisco Monge [aut]
 Maintainer: Laura Anton-Sanchez <l.anton@umh.es>
+Packaged: 2024-01-15 13:23:56 UTC; Laura
 Repository: CRAN
-Date/Publication: 2022-04-20 17:02:29 UTC
+Date/Publication: 2024-01-15 14:00:02 UTC
